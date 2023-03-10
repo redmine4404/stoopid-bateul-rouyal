@@ -5,8 +5,8 @@ void setup() {
   size(800, 600, P3D);
   //fullScreen(P3D);
   viseur = loadImage("costume3.png");
-  sky = loadImage("sky.JPG");
-  sky.resize(width, height);
+ // sky = loadImage("sky.JPG");
+ // sky.resize(width, height);
   initMouse();
   t = new tir();
   //pointLight(255, 255, 255, 500, -1000, 500);
