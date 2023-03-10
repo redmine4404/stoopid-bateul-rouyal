@@ -16,10 +16,10 @@ void setup() {
 void draw() {
  
   if (keyPressed && key == 'a'){
-  pointLight(255, 0, 0, 500, -1000, 500);
+ // pointLight(255, 0, 0, 500, -1000, 500);
   }else{
     
-    pointLight(255, 255, 255, 500, -1000, 500);
+//pointLight(255, 255, 255, 500, -1000, 500);
   }
   
   // directionalLight(0, 255, 255, -x, -y, -1);
