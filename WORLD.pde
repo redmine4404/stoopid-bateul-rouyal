@@ -3,7 +3,7 @@ PImage viseur, sky, sky2;
 
 void world() {
   //background(sky);
-  boxes(0,0,0,5000,5000,5000, #FFFFFF);
+  boxes(0, 0, 0, 5000, 5000, 5000, #FFFFFF);
   wall = false;//reset les deux hitbox en début de boucle
   wall2 = false;
   ground();
@@ -21,13 +21,13 @@ void boxes(int xx, int yy, int zz, int h, int p, int l, color couleur) {
   translate(xx, yy, zz); // place la boxe 
   fill(couleur); // choisit une couleur
   if ( -x  > xx - h/1.2  && -x  < xx + h/1.2 
-  && -z > zz - l/1.2 && -z < zz + l/1.2 && -y > yy - p/1 && -y < yy + p/1 ) { // on inverse les X et Z car c'est le décors qui bouge et non le joueur
-  //  fill(0); // choisit une couleur
+    && -z > zz - l/1.2 && -z < zz + l/1.2 && -y > yy - p/1 && -y < yy + p/1 ) { // on inverse les X et Z car c'est le décors qui bouge et non le joueur
+    //  fill(0); // choisit une couleur
     wall = true;
   }
-    if ( -x  > xx - h/1.2  && -x  < xx + h/1.2 
-  && -z > zz - l/1.2 && -z < zz + l/1.2  ) { // hitbox sans l'axe Y pour le saut, savoir si on est ou non dans l'objet
-   // fill(0); // choisit une couleur
+  if ( -x  > xx - h/1.2  && -x  < xx + h/1.2 
+    && -z > zz - l/1.2 && -z < zz + l/1.2  ) { // hitbox sans l'axe Y pour le saut, savoir si on est ou non dans l'objet
+    // fill(0); // choisit une couleur
     wall2 = true;
   }
   /*
