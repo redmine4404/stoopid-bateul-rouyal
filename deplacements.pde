@@ -1,8 +1,13 @@
 int x, y, z, sautTime;
 int lastX, lastZ, lastY;
+
 boolean up, left, down, right, saut;
 
+
+
+
 void move() {
+
   if (wall) { // si un objet est touché alors revenir à la dernière position enregistrée
     x = lastX;
     z = lastZ;
@@ -12,6 +17,8 @@ void move() {
     lastZ = z;
     lastY = y;
   }
+
+
 
   if (up) {
     x -=  sin(xRad) * 10; // oriente le déplacement suivant la caméra
