@@ -39,21 +39,6 @@ void boxes(int xx, int yy, int zz, int h, int p, int l, color couleur) {
   pop();
 }
 
-
-
-void propre(int xx, int yy, int zz, int l) {
-  translate(0, 0, 150); // place la boxe 
-  PImage img = loadImage("P1.png"); // charge l'image
-  beginShape(); // commence à dessier la forme
-  texture(img); // applique l'image
-  noStroke(); 
-  vertex(xx, yy, zz, 0, 0 ); // dessine les 4 points de la forme
-  vertex(xx, -l, yy, l, zz);
-  vertex(l, -l, xx, l, l);
-  vertex(l, xx, yy, zz, l);
-  endShape(CLOSE); // fini la forme
-}
-
 void ground() {
   push();
   translate(0, 100, 0);
