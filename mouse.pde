@@ -39,14 +39,13 @@ void mouseMove() {
   }
 }
 void mousePressed() {
-  mouseOn = true;
+  mouseOn = true;    //active la caméra
 }
 
-void viseur() {
+void viseur() { // curseur rouge au milieu de l'écran
   push();
   translate(width/2, height/2, 465);
   imageMode(CENTER);
   image(viseur, 0, 0, 5, 5);
-
   pop();
 }

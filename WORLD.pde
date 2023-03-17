@@ -7,10 +7,10 @@ void world() {
   wall = false;//reset les deux hitbox en début de boucle
   wall2 = false;
   ground();
-  boxes(0, 0, 500, 200, 100, 50, #521515);
-  boxes(500, 0, 0, 200, 800, 50, #393DEA);
-  boxes(-500, 0, 0, 200, 50, 50, #56644E);
-  boxes(0, 0, -500, 200, 200, 200, #FF4603);
+  boxes(0, 0, 500, 200, 100, 50, #521515);//boxe
+  boxes(500, 0, 0, 200, 800, 50, #393DEA);//boxe
+  boxes(-500, 0, 0, 200, 50, 50, #56644E);//boxe
+  boxes(0, 0, -500, 200, 200, 200, #FF4603);//boxe
   //  propre(0, 0, 500, 200);
 
   println(wall, wall2);
