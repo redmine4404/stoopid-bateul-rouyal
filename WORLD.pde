@@ -10,10 +10,23 @@ void world() {
   boxes(0, 0, 500, 200/1.5, 100/1.5, 50/1.5, #521515);//boxe
   boxes(500, 0, 0, 200/1.5, 800/1.5, 50/1.5, #393DEA);//boxe
   boxes(-500, 0, 0, 200/1.5, 50/1.5, 50/1.5, #56644E);//boxe
-  boxes(0, 0, -500, 200/1.5, 200/1.5, 200/1.5, #FF4603);//boxe orange
+  //boxes(0, 0, -500, 200/1.5, 200/1.5, 200/1.5, #FF4603);//boxe orange
+  propre(0, 0, 150, 10);
   println(wall, wall2);
 }
 
+void propre(int xx, int yy, int zz, int l) {
+  translate(0, 0, 150); // place la boxe 
+  PImage img = loadImage("P12.png"); // charge l'image
+  beginShape(); // commence à dessier la forme
+  texture(img); // applique l'image
+  noStroke(); 
+  vertex(xx, yy, zz, 0, 0 ); // dessine les 4 points de la forme
+  vertex(xx, -l, yy, l, zz);
+  vertex(l, -l, xx, l, l);
+  vertex(l, xx, yy, zz, l);
+  endShape(CLOSE); // fini la forme
+}
 
 void boxes(int xx, int yy, int zz, float h, float p, float l, color couleur) {
   push();
