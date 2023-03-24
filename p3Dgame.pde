@@ -2,8 +2,8 @@ tir t;
 
 void setup() {
   noCursor();
-  size(800, 600, P3D); // size stable
-  //fullScreen(P3D); //souris stable mais caméra très buggée
+  //size(800, 600, P3D); // size stable
+  fullScreen(P3D); //souris stable mais caméra très buggée
   viseur = loadImage("costume3.png");
  // sky = loadImage("sky.JPG");
  // sky.resize(width, height);
@@ -14,6 +14,7 @@ void setup() {
 
 
 void draw() {
+  println(sautTime, saut);
   push();
   cameraFPS();//------- caméra ---
   world(); //------- le monde ---

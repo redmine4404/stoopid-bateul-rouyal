@@ -20,7 +20,7 @@ void initMouse() { // à mettre dans la setup
 
 void cameraFPS() {
 
-  translate(width/2, height/2, 500);
+  translate(width/2, height/2, 750);
   rotateY(xRad);
   float cameraX = yRad * cos(xRad);
   float cameraZ = yRad * sin(xRad);

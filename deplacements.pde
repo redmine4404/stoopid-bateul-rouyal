@@ -1,5 +1,5 @@
-int x, y, z, sautTime;
-int lastX, lastZ, lastY;
+float x, y, z, sautTime;
+float lastX, lastZ, lastY;
 boolean up, left, down, right, saut;
 
 void move() {
@@ -34,19 +34,22 @@ void move() {
 }
 
 void saut () {
-  if ( y>0 && !saut && !wall2) { // si ne touche pas le sol et ne saute pas et n'est pas dans la zone du cube.
+  if (y>0 && !saut && !wall2) { // si ne touche pas le sol et ne saute pas et n'est pas dans la zone du cube.
     saut = true; //lancer le saut
-    sautTime = 25; // pour tomber directement
+    sautTime = 20; // pour tomber directement
   }
-  if (saut && sautTime < 50 ) { // saut en deux phase d'abord monter puis tomber
+  if (saut && sautTime < 40) { // saut en deux phase d'abord monter puis tomber
     sautTime++;
-    if ( y>=0)y += 25 - sautTime; // tomber/sauter uniquement si on est au dessus du sol ou sur le sol
+    if (y>=0)y += 20 - sautTime; // tomber/sauter uniquement si on est au dessus du sol ou sur le sol
   }
 
-  if (saut && sautTime == 50 ) { //quand le saut arrive a son terme, reset les variables, si touche la box alors ne pas reset Y.
+  if (saut && sautTime == 40) { //quand le saut arrive a son terme, reset les variables, si touche la box alors ne pas reset Y.
     sautTime =0;
     saut = false;
     if (!wall)y = 0;
+  }
+  if (sautTime > 40) {
+    sautTime = 40;
   }
 }
 

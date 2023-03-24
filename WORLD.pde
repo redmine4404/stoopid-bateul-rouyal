@@ -7,20 +7,20 @@ void world() {
   wall = false;//reset les deux hitbox en début de boucle
   wall2 = false;
   ground();
-  boxes(0, 0, 500, 200, 100, 50, #521515);//boxe
-  boxes(500, 0, 0, 200, 800, 50, #393DEA);//boxe
-  boxes(-500, 0, 0, 200, 50, 50, #56644E);//boxe
-  boxes(0, 0, -500, 200, 200, 200, #FF4603);//boxe
+  boxes(0, 0, 500, 200/1.5, 100/1.5, 50/1.5, #521515);//boxe
+  boxes(500, 0, 0, 200/1.5, 800/1.5, 50/1.5, #393DEA);//boxe
+  boxes(-500, 0, 0, 200/1.5, 50/1.5, 50/1.5, #56644E);//boxe
+  boxes(0, 0, -500, 200/1.5, 200/1.5, 200/1.5, #FF4603);//boxe orange
   //  propre(0, 0, 500, 200);
 
   println(wall, wall2);
 }
 
-void boxes(int xx, int yy, int zz, int h, int p, int l, color couleur) {
+void boxes(int xx, int yy, int zz, float h, float p, float l, color couleur) {
   push();
   translate(xx, yy, zz); // place la boxe 
   fill(couleur); // choisit une couleur
-  if ( -x  > xx - h/1.2  && -x  < xx + h/1.2 
+  if (-x  > xx - h/1.2  && -x  < xx + h/1.2 
     && -z > zz - l/1.2 && -z < zz + l/1.2 && -y > yy - p/1 && -y < yy + p/1 ) { // on inverse les X et Z car c'est le décors qui bouge et non le joueur
     //  fill(0); // choisit une couleur
     wall = true;
@@ -30,11 +30,6 @@ void boxes(int xx, int yy, int zz, int h, int p, int l, color couleur) {
     // fill(0); // choisit une couleur
     wall2 = true;
   }
-  /*
-   if ( dist ((-x), (-z), xx, zz) < l) {  // pour les sphères
-   fill(0); // choisit une couleur
-   }
-   */
   box(h, p, l); //créer une boxe aux dimensions suivantes
   pop();
 }
