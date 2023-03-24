@@ -14,6 +14,7 @@ void world() {
   println(wall, wall2);
 }
 
+
 void boxes(int xx, int yy, int zz, float h, float p, float l, color couleur) {
   push();
   translate(xx, yy, zz); // place la boxe 
