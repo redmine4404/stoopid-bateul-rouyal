@@ -34,7 +34,7 @@ void mouseMove() {
   if (mouseOn) {
     robby.mouseMove(displayWidth/2, displayHeight/2); // replace la souris au centre de l'écran
     xRad += radians( (mouseX-width/2)* 0.5); // calcul pour savoir si on est a droite ou a gauche
-    yRad -= radians((mouseY-height/2)* 0.5); // calcul pour la vue haut/bas 
+    yRad -= radians((mouseY-height/2)* 0.5); // calcul pour la vue haut/bas
     yRad = constrain(yRad, -0.8, 0.8); // pour ne pas regarde ni trop bas ni trop haut
   }
 }

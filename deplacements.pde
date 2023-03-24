@@ -1,7 +1,6 @@
 float x, y, z, sautTime;
 float lastX, lastZ, lastY;
 boolean up, left, down, right, saut;
-
 void move() {
   if (wall) { // si un objet est touché alors revenir à la dernière position enregistrée
     x = lastX;
@@ -12,19 +11,18 @@ void move() {
     lastZ = z;
     lastY = y;
   }
-
   if (up) {
     x -=  sin(xRad) * 10; // oriente le déplacement suivant la caméra
     z +=  cos(xRad) * 10; // oriente le déplacement suivant la caméra
   }
 
   if (left) {
-    x += 5 * sin(xRad + PI/2); // oriente le déplacement suivant la caméra + un quart de tour pour se déplacer de coté
-    z -= 5 * cos(xRad + PI/2);// oriente le déplacement suivant la caméra + un quart de tour pour se déplacer de coté
+    x += 5 * sin(xRad + PI / 2); // oriente le déplacement suivant la caméra + un quart de tour pour se déplacer de coté
+    z -= 5 * cos(xRad + PI / 2);// oriente le déplacement suivant la caméra + un quart de tour pour se déplacer de coté
   }
   if (right) {
-    x -= 5 * sin(xRad + PI/2);// oriente le déplacement suivant la caméra + un quart de tour pour se déplacer de coté
-    z += 5 * cos(xRad + PI/2);// oriente le déplacement suivant la caméra + un quart de tour pour se déplacer de coté
+    x -= 5 * sin(xRad + PI / 2);// oriente le déplacement suivant la caméra + un quart de tour pour se déplacer de coté
+    z += 5 * cos(xRad + PI / 2);// oriente le déplacement suivant la caméra + un quart de tour pour se déplacer de coté
   }
   if (down) {
     x += 5 * sin(xRad); // oriente le déplacement suivant la caméra mais dans le sens inverse
@@ -53,13 +51,10 @@ void saut () {
   }
 }
 
-
 void keyPressed() {
-
   if (key == 'z') {
     up = true;
   }
-
   if (key == 'q') {
     left = true;
   }
@@ -76,11 +71,9 @@ void keyPressed() {
 
 
 void keyReleased() {
-
   if (key == 'z') {
     up = false;
   }
-
   if (key == 'q') {
     left = false;
   }
