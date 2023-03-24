@@ -4,10 +4,10 @@ import processing.core.PImage;
 import java.awt.*;
 
 public class WORLD extends PApplet {
-    boolean wall, wall2;
+    public static boolean wall, wall2;
     PImage viseur, sky, sky2;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String[] prossesingArgs = {"fr.redmine4404.lol.truc"};
         WORLD world = new WORLD();
         PApplet.runSketch(prossesingArgs, world);
@@ -15,7 +15,7 @@ public class WORLD extends PApplet {
 
     public void world() {
         //background(sky);
-        boxes(0, 0, 0, 5000, 5000, 5000, );
+        boxes(0, 0, 0, 5000, 5000, 5000, new Color(255, 255, 255));
         wall = false;//reset les deux hitbox en début de boucle
         wall2 = false;
         ground();
@@ -32,13 +32,13 @@ public class WORLD extends PApplet {
         push();
         translate(xx, yy, zz); // place la boxe
         fill(couleur.getColor(1), couleur.getColor(2), couleur.getColor(3)); // choisit une couleur
-        if (-x > xx - h / 1.2 && -x < xx + h / 1.2
-                && -z > zz - l / 1.2 && -z < zz + l / 1.2 && -y > yy - p / 1 && -y < yy + p / 1) { // on inverse les X et Z car c'est le décors qui bouge et non le joueur
+        if (-deplacements.x > xx - h / 1.2 && -deplacements.x < xx + h / 1.2
+                && -deplacements.z > zz - l / 1.2 && -deplacements.z < zz + l / 1.2 && -deplacements.y > yy - p / 1 && -deplacements.y < yy + p / 1) { // on inverse les X et Z car c'est le décors qui bouge et non le joueur
             //  fill(0); // choisit une couleur
             wall = true;
         }
-        if (-x > xx - h / 1.2 && -x < xx + h / 1.2
-                && -z > zz - l / 1.2 && -z < zz + l / 1.2) { // hitbox sans l'axe Y pour le saut, savoir si on est ou non dans l'objet
+        if (-deplacements.x > xx - h / 1.2 && -deplacements.x < xx + h / 1.2
+                && -deplacements.z > zz - l / 1.2 && -deplacements.z < zz + l / 1.2) { // hitbox sans l'axe Y pour le saut, savoir si on est ou non dans l'objet
             // fill(0); // choisit une couleur
             wall2 = true;
         }
@@ -51,25 +51,12 @@ public class WORLD extends PApplet {
         pop();
     }
 
+    public void ground() {
+        push();
+        fill(101, 93, 103);
+        box(2000, 1, 2000);
+        translate(0, 100, 0);
+        pop();
 
-
-void propre(int xx, int yy, int zz, int l) {
-  translate(0, 0, 150); // place la boxe 
-  PImage img = loadImage("P1.png"); // charge l'image
-  beginShape(); // commence à dessier la forme
-  texture(img); // applique l'image
-  noStroke(); 
-  vertex(xx, yy, zz, 0, 0 ); // dessine les 4 points de la forme
-  vertex(xx, -l, yy, l, zz);
-  vertex(l, -l, xx, l, l);
-  vertex(l, xx, yy, zz, l);
-  endShape(CLOSE); // fini la forme
+    }
 }
-
-void ground() {
-  push();
-  fill(#655D67);
-  translate(0, 100, 0);
-  pop();
-}
-  box(2000, 1, 2000);
